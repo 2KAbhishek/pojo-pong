@@ -48,7 +48,7 @@ void drawTrail() {
 
     for (int i = 0; i < trail.size(); i++) {
         noStroke();
-        fill(22, 136 - i * 5, 240);
+        fill(22 + i * 10, 136 + i * 5, 235 + i);
         PVector curBallPos = trail.get(i);
         ellipse(curBallPos.x, curBallPos.y, i, i);
     }
