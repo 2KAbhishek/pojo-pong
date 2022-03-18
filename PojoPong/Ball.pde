@@ -13,6 +13,14 @@ class Ball {
     if (y < 0 || y > height) {
       yVelocity *= -1;
     }
+
+    if (x < 0) {
+      reset("left");
+    }
+
+    if (x > width) {
+      reset("right");
+    }
   }
 
   void show() {
