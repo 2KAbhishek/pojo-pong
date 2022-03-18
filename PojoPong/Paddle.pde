@@ -9,7 +9,7 @@ class Paddle {
         side = side_;
         if (side.equals("left")) {
             x = pWidth * 2;
-        } else {
+        } else if (side.equals("right")) {
             x = width - (pWidth * 2);
         }
     }

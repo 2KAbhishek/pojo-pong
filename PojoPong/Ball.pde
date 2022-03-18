@@ -3,9 +3,14 @@ import java.util.Random;
 class Ball {
     float x = width / 2;
     float y = height / 2;
+    float r = 10;
     Random rand = new Random();
     float xVelocity = rand.nextBoolean() ? 4 : - 4;
-    float yVelocity = (rand.nextInt(10 - 3) + 3) * (rand.nextBoolean() ? 1 : - 1);
+    float yVelocity = random(-10, 10);
+
+    Ball() {
+        reset("");
+    }
 
     void update() {
         x += xVelocity;
