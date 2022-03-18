@@ -7,5 +7,6 @@ void setup() {
 
 void draw() {
   background(15);
+  ball.update();
   ball.show();
 }
