@@ -68,19 +68,11 @@ void keyPressed() {
         case 'j':
             right.move(10);
             break;
-        case 't':
-            if ((playerOne == 3) && (playerTwo == 3)) {
-                loop();
-            }
-            break;
-        case 'c':
+        case ' ':
             loop();
-            if ((playerOne > 0) && (playerTwo > 0)) {
-                break;
+            if ((playerOne <= 0) || (playerTwo <= 0)) {
+                setup();
             }
-            case'n':
-            loop();
-            setup();
             break;
     }
 }
