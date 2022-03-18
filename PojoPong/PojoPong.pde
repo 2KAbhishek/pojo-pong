@@ -27,7 +27,15 @@ void draw() {
     ball.update();
     ball.edges();
     ball.show();
+    drawScore();
     drawTrail();
+}
+
+void drawScore() {
+    fill(70, 200, 100);
+    textSize(32);
+    text(playerOne, 32, 40);
+    text(playerTwo, width - 64, 40);
 }
 
 void drawTrail() {
