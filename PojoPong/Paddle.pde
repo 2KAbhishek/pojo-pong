@@ -5,9 +5,13 @@ class Paddle {
   float pWidth = 20;
   String side;
 
-  Paddle(float x_, String side_) {
-    x = x_;
+  Paddle(String side_) {
     side = side_;
+    if (side.equals("left")) {
+      x = pWidth * 2;
+    } else {
+      x = width - (pWidth * 2);
+    }
   }
 
   void show() {
