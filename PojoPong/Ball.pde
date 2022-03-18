@@ -44,11 +44,25 @@ class Ball {
         }
 
         if (x - 40 < 0) {
+            playerOne--;
             reset("left");
+            if (playerOne <= 0) {
+                textSize(32);
+                text("Player Two Wins", width / 2 - 100, height / 2);
+                noLoop();
+            }
+            noLoop();
         }
 
         if (x > width - 40) {
+            playerTwo--;
             reset("right");
+            if (playerTwo <= 0) {
+                textSize(32);
+                text("Player One Wins", width / 2 - 100, height / 2);
+                noLoop();
+            }
+            noLoop();
         }
     }
 
