@@ -16,10 +16,10 @@ class Ball {
     y = height / 2;
     switch(edge) {
     case "left":
-      x = 0 + 30;
+      xVelocity = 4;
       break;
     case "right":
-      x = width - 30;
+      xVelocity = -4;
       break;
     default:
       x = width / 2;
@@ -31,11 +31,11 @@ class Ball {
       yVelocity *= -1;
     }
 
-    if (x < 0) {
+    if (x - 40 < 0) {
       reset("left");
     }
 
-    if (x > width) {
+    if (x > width - 40) {
       reset("right");
     }
   }
