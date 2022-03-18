@@ -19,15 +19,22 @@ class Ball {
 
     void reset(String edge) {
         y = height / 2;
+        float angle = random( -PI / 4, PI / 4);
+        yVelocity = 5 * sin(angle);
+        trail.clear();
+
         switch(edge) {
             case "left":
-                xVelocity = 4;
+                x = 60;
+                xVelocity = 4 * cos(angle);
                 break;
             case "right":
-                xVelocity = -4;
+                x = width - 60;
+                xVelocity = -4 * cos(angle);
                 break;
             default:
             x = width / 2;
+            xVelocity = 4 * cos(angle);
         }
     }
 
