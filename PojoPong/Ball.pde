@@ -12,6 +12,33 @@ class Ball {
         reset("");
     }
 
+    void checkCollision(Paddle p) {
+        if(p.side.equals("left")) {
+            if (y - r < p.y + p.pHeight / 2 && y + r > p.y - p.pHeight / 2
+               && x - r< p.x + p.pWidth / 2) {
+                if (x > p.x) {
+                    float diff = y - (p.y - p.pHeight / 2);
+                    float rad = radians(45);
+                    float angle = map(diff, 0, p.pHeight, -rad, rad);
+                    xVelocity = 5 * cos(angle);
+                    yVelocity = 5 * sin(angle);
+                    x = p.x + p.pWidth / 2 + r;
+                }
+            }
+        } else if (p.side.equals("right")) {
+            if(y - r < p.y + p.pHeight / 2 && y + r > p.y - p.pHeight / 2 &&
+                x + r > p.x - p.pWidth / 2) {
+                if (x < p.x) {
+                    float diff = y - (p.y - p.pHeight / 2);
+                    float angle = map(diff, 0, p.pHeight, radians(225), radians(135));
+                    xVelocity = 5 * cos(angle);
+                    yVelocity = 5 * sin(angle);
+                    x = p.x - p.pWidth / 2 - r;
+                }
+            }
+        }
+    }
+
     void update() {
         x += xVelocity;
         y += yVelocity;

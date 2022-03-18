@@ -19,6 +19,8 @@ void setup() {
 
 void draw() {
     background(15);
+    ball.checkCollision(left);
+    ball.checkCollision(right);
     left.show();
     right.show();
 
