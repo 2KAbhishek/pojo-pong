@@ -17,3 +17,20 @@ void draw() {
   left.show();
   right.show();
 }
+
+void keyPressed() {
+  switch (key) {
+  case 'w':
+    left.move(-10);
+    break;
+  case 's':
+    left.move(10);
+    break;
+  case 'i':
+    right.move(-10);
+    break;
+  case 'k':
+    right.move(10);
+    break;
+  }
+}
