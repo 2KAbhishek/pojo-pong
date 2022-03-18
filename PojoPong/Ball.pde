@@ -7,7 +7,13 @@ class Ball {
   void update() {
     x += xVelocity;
     y += yVelocity;
-  }    
+  }
+
+  void edges() {
+    if (y < 0 || y > height) {
+      yVelocity *= -1;
+    }
+  }
 
   void show() {
     fill(22, 136, 240);
