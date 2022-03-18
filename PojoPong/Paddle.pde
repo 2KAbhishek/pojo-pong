@@ -14,6 +14,11 @@ class Paddle {
     }
   }
 
+  void move(float steps) {
+    y += steps;
+    y = constrain(y, pHeight/2, height - pHeight/2);
+  }
+
   void show() {
     fill(150, 170, 190);
     rectMode(CENTER);
