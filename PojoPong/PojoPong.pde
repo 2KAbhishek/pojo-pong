@@ -2,6 +2,9 @@ Ball ball;
 Paddle left;
 Paddle right;
 
+int playerOne;
+int playerTwo;
+
 void setup() {
   size(800, 600);
   ball = new Ball();
