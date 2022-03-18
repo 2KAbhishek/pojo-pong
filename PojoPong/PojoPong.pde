@@ -25,7 +25,10 @@ void draw() {
     ball.update();
     ball.edges();
     ball.show();
+    drawTrail();
+}
 
+void drawTrail() {
     PVector ballPos = new PVector(ball.x, ball.y);
     trail.add(ballPos);
 
