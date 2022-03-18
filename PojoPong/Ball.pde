@@ -67,6 +67,7 @@ class Ball {
     }
 
     void show() {
+        noStroke();
         fill(22, 136, 240);
         ellipse(x, y, 20, 20);
     }
