@@ -49,10 +49,10 @@ void keyPressed() {
         case 's':
             left.move(10);
             break;
-        case 'i':
+        case 'k':
             right.move( -10);
             break;
-        case 'k':
+        case 'j':
             right.move(10);
             break;
         case 't':
