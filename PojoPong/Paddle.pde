@@ -14,7 +14,7 @@ class Paddle {
         }
     }
 
-    voidmove(float steps) {
+    void move(float steps) {
         y += steps;
         y = constrain(y, pHeight / 2, height - pHeight / 2);
     }

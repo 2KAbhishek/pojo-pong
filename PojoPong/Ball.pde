@@ -12,7 +12,7 @@ class Ball {
         y += yVelocity;
     }
 
-    voidreset(String edge) {
+    void reset(String edge) {
         y = height / 2;
         switch(edge) {
             case "left":
@@ -26,7 +26,7 @@ class Ball {
         }
     }
 
-    voidedges() {
+    void edges() {
         if (y < 0 || y > height) {
             yVelocity *= -1;
         }
@@ -40,7 +40,7 @@ class Ball {
         }
     }
 
-    voidshow() {
+    void show() {
         fill(22, 136, 240);
         ellipse(x, y, 20, 20);
     }
