@@ -21,8 +21,11 @@ void draw() {
     background(15);
     ball.checkCollision(left);
     ball.checkCollision(right);
+
     left.show();
     right.show();
+    left.update();
+    right.update();
 
     ball.update();
     ball.edges();
@@ -54,16 +57,21 @@ void drawTrail() {
     }
 }
 
+void keyReleased() {
+  left.move(0);
+  right.move(0);
+}
+
 void keyPressed() {
     switch(key) {
         case 'w':
-            left.move( -10);
+            left.move(-10);
             break;
         case 's':
             left.move(10);
             break;
         case 'k':
-            right.move( -10);
+            right.move(-10);
             break;
         case 'j':
             right.move(10);

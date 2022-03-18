@@ -5,6 +5,8 @@ class Paddle {
     float pWidth = 20;
     String side;
 
+    float yChange = 0;
+
     Paddle(String side_) {
         side = side_;
         if (side.equals("left")) {
@@ -14,9 +16,13 @@ class Paddle {
         }
     }
 
-    void move(float steps) {
-        y += steps;
+    void update() {
+        y += yChange;
         y = constrain(y, pHeight / 2, height - pHeight / 2);
+}
+
+    void move(float steps) {
+        yChange = steps;
     }
 
     void show() {
