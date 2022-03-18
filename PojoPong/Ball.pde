@@ -9,6 +9,20 @@ class Ball {
     y += yVelocity;
   }
 
+  void reset(String edge) {
+    y = height / 2;
+    switch(edge) {
+    case "left":
+      x = 0 + 30;
+      break;
+    case "right":
+      x = width - 30;
+      break;
+    default:
+      x = width / 2;
+    }
+  }
+
   void edges() {
     if (y < 0 || y > height) {
       yVelocity *= -1;
