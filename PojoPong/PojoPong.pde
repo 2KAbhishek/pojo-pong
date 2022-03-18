@@ -5,20 +5,40 @@ Paddle right;
 int playerOne;
 int playerTwo;
 
+ArrayList<PVector> trail = new ArrayList<PVector>();
+
 void setup() {
     size(800, 600);
     ball = new Ball();
     left = new Paddle("left");
     right = new Paddle("right");
+    playerOne = 3;
+    playerTwo = 3;
+    noLoop();
 }
 
 void draw() {
     background(15);
+    left.show();
+    right.show();
+
     ball.update();
     ball.edges();
     ball.show();
-    left.show();
-    right.show();
+
+    PVector ballPos = new PVector(ball.x, ball.y);
+    trail.add(ballPos);
+
+    if (trail.size() > 20) {
+        trail.remove(0);
+    }
+
+    for (int i = 0; i < trail.size(); i++) {
+        noStroke();
+        fill(22, 136 - i * 5, 240);
+        PVector curBallPos = trail.get(i);
+        ellipse(curBallPos.x, curBallPos.y, i, i);
+    }
 }
 
 void keyPressed() {
